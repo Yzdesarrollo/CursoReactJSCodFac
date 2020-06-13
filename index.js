@@ -1,32 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 
-const Boton = () =>
-{
-  const [conteo, setConteo] = useState(0);
-  useEffect( ()=>
-  {
-    console.log('Me ejecute');
-    return ()=>
-    {
-      console.log('Adios');
-    }
-  },[]);
-  return <button onClick={ ()=> setConteo(conteo+1) }>Click { conteo }</button>
-}
-
-const App = () => 
-{
-  const [mostrarBoton, setMostrarBoton] = useState(true);
+const Saludo = () =>{
+  const [name, setName ] = useState('');
   return(
     <div>
-      <button onClick ={ ()=> setMostrarBoton(false)}>Eliminar botón</button>
-      <div>
-        {mostrarBoton && <Boton />}
-      </div>
+      {/* SyntheticEvent */}
+      <input type="text" onChange={ (ev) => setName(ev.target.value) }/>
+      <p>Hola {name} </p>
     </div>
-  )
+  );
 }
 
+const App = () => {
+  return <div><Saludo /></div>
+}
 
-render( <App />, document.getElementById('titulo'));
+render(<App />, document.getElementById('titulo'));
