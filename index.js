@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 
-const nombres = ['Camilo', 'Santiago', 'Simon']
-
-const Saludar = ({nombre, idioma= 'en'})=>
+const Boton = () =>
 {
-  const saludo = idioma === 'es' ? 'Hola' : 'Hello';
-  return <p>{saludo} {nombre}</p>
+  const [conteo, setConteo] = useState(0);
+  return(
+    <div>
+      <p>Presionado: { conteo }</p>
+      <button onClick={ () => console.log(':3') }>Click me!</button>
+    </div>
+  )
 }
 
 
 const App = () => 
 {
-  return <div><Saludar nombre='MARIA' idioma='es'/></div>
+  return <div><Boton /></div>
 }
 
 render( <App />, document.getElementById('titulo'));
