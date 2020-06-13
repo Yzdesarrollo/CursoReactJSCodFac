@@ -1,22 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-const Saludo = () =>
+const paises = ['Peru', 'Chile', 'Uruguay', 'Colombia']
+
+function getPaises()
 {
-  const idioma = 'en';
-   return(
-     <div>
-     {
-       idioma === 'en' ? <p>Hello</p> : <p>Hola</p>
-     }
-     </div>
-   )
-  
+  const elementos = [];
+  for(let i = 0; i < paises.length; i ++)
+  {
+    elementos.push(<li>{paises[i]}</li>);
+  }
+  return elementos;
 }
 
-const App = () => 
+const Paises = () => 
 {
-    return <h1><Saludo /></h1>;
+  return <ul>{ getPaises() }</ul>
 }
 
-render( <App />, document.getElementById('titulo'));
+const App = () =>
+{
+  return <h1><Paises /></h1>;
+}
+
+render(<App />, document.getElementById('titulo'));
