@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 
 const Saludo = () =>
 {
-  return <p>Hola desde ReactJS</p>;
+    const curso = 'Primeros Pasos con ReactJS'
+    return <p>Hola { curso }</p>;
 }
 
 const App = () => 
