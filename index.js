@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 const nombres = ['Camilo', 'Santiago', 'Simon']
 
-const Saludar = ({ nombre, idioma })=>
+const Saludar = ({nombre, idioma= 'en'})=>
 {
   const saludo = idioma === 'es' ? 'Hola' : 'Hello';
   return <p>{saludo} {nombre}</p>
@@ -12,7 +12,7 @@ const Saludar = ({ nombre, idioma })=>
 
 const App = () => 
 {
-  return <div><Saludar nombre='MARIA' idioma='en'/></div>
+  return <div><Saludar nombre='MARIA' idioma='es'/></div>
 }
 
 render( <App />, document.getElementById('titulo'));
