@@ -3,8 +3,15 @@ import { render } from 'react-dom';
 
 const Saludo = () =>
 {
-    const curso = 'Primeros Pasos con ReactJS'
-    return <p>Hola { `${curso}` }</p>;
+  const idioma = 'en';
+   return(
+     <div>
+     {
+       idioma === 'en' ? <p>Hello</p> : <p>Hola</p>
+     }
+     </div>
+   )
+  
 }
 
 const App = () => 
