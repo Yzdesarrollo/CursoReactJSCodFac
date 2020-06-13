@@ -20,18 +20,22 @@ const sendForm = (ev) => {
     }
   })
   .then(response => response.json())
-  .then(json => console.log(json))
+  .then(json => {
+    setTitle("");
+    setBody("");
+    console.log(json)
+    })
 }
 
   return(
   <form onSubmit={(ev)=> sendForm(ev)}>
     <div>
       <label htmlFor="title">Título</label>
-      <input type="text" id="title" onChange={ (ev) => setTitle(ev.target.value) } />
+      <input type="text" value={title} id="title" onChange={ (ev) => setTitle(ev.target.value) } />
     </div>
      <div>
       <label htmlFor="body">Publicación</label>
-      <textarea id="body" onChange={ (ev) => setBody(ev.target.value) }></textarea>
+      <textarea id="body"  value={body} onChange={ (ev) => setBody(ev.target.value) }></textarea>
     </div>
     <input type="submit" value="Enviar" />
   </form>
