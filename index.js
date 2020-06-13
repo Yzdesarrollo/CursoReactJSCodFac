@@ -15,7 +15,7 @@ function getPaises()
 
 const Paises = () => 
 {
-  return <ul>{ getPaises() }</ul>
+  return <ul>{ paises.map( nombre => <li>{nombre}</li> )}</ul>
 }
 
 const App = () =>
