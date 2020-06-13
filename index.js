@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-function App() {
+const App = () => {
   return <h1>Hola Mundo </h1>
 }
 
