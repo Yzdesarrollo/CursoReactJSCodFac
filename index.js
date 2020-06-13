@@ -3,9 +3,9 @@ import { render } from 'react-dom';
 
 const nombres = ['Camilo', 'Santiago', 'Simon']
 
-const Saludar = (props)=>
+const Saludar = ({nombre})=>
 {
-  return <p>Hola {props.nombre}</p>
+  return <p>Hola {nombre}</p>
 }
 
 
