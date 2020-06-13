@@ -3,15 +3,16 @@ import { render } from 'react-dom';
 
 const nombres = ['Camilo', 'Santiago', 'Simon']
 
-const Saludar = ({nombre})=>
+const Saludar = ({ nombre, idioma })=>
 {
-  return <p>Hola {nombre}</p>
+  const saludo = idioma === 'es' ? 'Hola' : 'Hello';
+  return <p>{saludo} {nombre}</p>
 }
 
 
 const App = () => 
 {
-  return <div><Saludar nombre='MARIA' /></div>
+  return <div><Saludar nombre='MARIA' idioma='en'/></div>
 }
 
 render( <App />, document.getElementById('titulo'));
