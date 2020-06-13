@@ -7,7 +7,7 @@ const Boton = () =>
   return(
     <div>
       <p>Presionado: { conteo }</p>
-      <button onClick={ () => console.log(':3') }>Click me!</button>
+      <button onClick={ () => setConteo(conteo + 1)}>Click me!</button>
     </div>
   )
 }
