@@ -7,11 +7,26 @@ const Boton = () =>
   useEffect( ()=>
   {
     console.log('Me ejecute');
+    return ()=>
+    {
+      console.log('Adios');
+    }
   },[]);
   return <button onClick={ ()=> setConteo(conteo+1) }>Click { conteo }</button>
 }
 
-const App = () => <Boton />
+const App = () => 
+{
+  const [mostrarBoton, setMostrarBoton] = useState(true);
+  return(
+    <div>
+      <button onClick ={ ()=> setMostrarBoton(false)}>Eliminar botón</button>
+      <div>
+        {mostrarBoton && <Boton />}
+      </div>
+    </div>
+  )
+}
 
 
 render( <App />, document.getElementById('titulo'));
