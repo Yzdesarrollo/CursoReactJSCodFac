@@ -7,7 +7,7 @@ const Boton = () =>
   useEffect( ()=>
   {
     console.log('Me ejecute');
-  })
+  },[]);
   return <button onClick={ ()=> setConteo(conteo+1) }>Click { conteo }</button>
 }
 
