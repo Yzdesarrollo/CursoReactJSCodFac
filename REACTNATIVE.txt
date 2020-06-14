@@ -1,0 +1,18 @@
+Creado en Facebook y publicado en Febrero de 2015 React Native es un framework para la creación de aplicaciones nativas para iOS y Android. Para programar aplicaciones usando React Native usamos como lenguaje de programación JavaScript, en lugar de Swift, JAVA u otros lenguajes y por el resto usamos React para la creación de la interfaz del usuario.
+
+A diferencia de otras soluciones como Ionic, Cordova o Phonegap, React Native no utiliza WebViews ni produce HTML o CSS, es decir, no usa tecnologías web para la interfaz de tu aplicación. La pregunta es, si no usa estas tecnologías cómo es que podemos usar React y JavaScript para la creación de aplicaciones nativas.
+
+Saber que las aplicaciones de React Native no son 100% nativas, es el primer paso para entender qué está sucediendo internamente para que una app escrita en JavaScript se ejecute de manera “nativa” entre comillas.
+
+Las aplicaciones de React Native se componen de 3 elementos principalmente:
+
+Código nativo: Un proyecto de React Native puede contener código nativo en combinación con el código de JavaScript, es decir, si estás desarrollando una app para Android podrías tener código de JAVA aparte del proyecto de JavaScript.
+JavaScriptCore VM: Las aplicaciones de ReactNative utilizan JavaScriptCore, el motor de ejecución de JavaScript de Safari para ejecutar el código de JavaScript de nuestra app, esto significa que el código que escribas de JavaScript no será compilado, será ejecutado como JavaScript dentro de tu app, por eso decimos que no es 100% nativo, porque internamente hay una máquina virtual que ejecuta el código de JavaScript.
+React Native Bridge: Como su nombre lo dice, el React Native Bridge es un puente que se encarga de comunicar el código de la máquina virtual de JavaScript con el código nativo y las APIs nativas de la plataforma en la que se ejecuta nuestra aplicación.
+Quizás hayas escuchado de un concepto muy importante de las aplicaciones de React, el Virtual DOM. El Virtual DOM es una representación virtual, como su nombre indica, de cómo se deben mostrar los componentes en la interfaz, de cómo se hará el render.
+
+En los navegadores web, el virtual DOM se representa a través del Document Object Model con elementos de HTML, la ventaja de que el Virtual DOM sea una capa intermedia entre el código y la representación final de nuestra app, permite que modifiquemos dicha representación basado en la descripción del virtual DOM, piensa en el Virtual DOM como una especificación textual de cómo debe verse la app, digamos, habrá un text input aquí, un botón de color rojo allá, etc. Después esta especificación debe trasladarse a los componentes de la plataforma donde se verá, de nuevo, en el caso de una página web esto significa elementos de HTML.
+
+Para desarrollar ReactNative se implementa un conector que tomará la descripción del Virtual DOM y basado en ésta, mandará a llamar APIs nativas de la plataforma ya sea iOS o Android y representará el DOM aprovechando dichas APIs Nativas. Esto significa que por ejemplo cuando en React Native mandes a llamar el elemento View, el conector verá cómo traducirlo a Android y cómo traducirlo a alguna API nativa de iOS.
+
+En términos generales esto es y así funciona React Native, continuemos.
